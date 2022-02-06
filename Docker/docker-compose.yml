@@ -1,0 +1,40 @@
+# версія
+version: '3.1'
+
+# які сервіси використовуємо
+services:
+  # сервіс mysql-cv-db
+  mysql-cv-db:
+    # збирає image з папки .local/mysql, в якій знаходиться Dockerfile
+    # можна написати зімість build
+    # image: mongo:latest - створить контейнер з імеджа, а не існуючого докерфайла
+    build:
+      context: .local/mysql
+
+    # після перезапуску системи автоматично буде підіймати контейнер
+    restart: always
+
+    # список змін які необхідні
+    environment:
+      MYSQL_DATABASE: 'root'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'root'
+      MYSQL_ROOT_PASSWORD: 'root'
+
+    # вказуємо порт який буде доступний ззовні
+    ports:
+      - 3307:3306
+    volumes:
+      - ${MYSQL_VOLUME}:/var/lib/mysql
+  cv-db:
+    build:
+      context: .local/postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DATABASE}
+    ports:
+      - 5433:5432
+    volumes:
+      - ${PG_VOLUME}:/var/lib/postgresql

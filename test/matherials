@@ -1,0 +1,39 @@
+   * Mocha	                                                           * Jest
+test runner	                                                        testing framework
+
+requires other libraries to work	                                no pre configuration required
+(e.g. node-mocks-http, chai, sinon)
+
+offers a huge dose of flexibility regarding test development	    focused on simplicity
+
+originally designed for Node.js	                                    originally designed for React
+
+    Код тестов должен быть как можно более простым, с минимальным количеством зависимостей и уровней абстракции. Тесты
+должны выглядеть так, чтобы их можно было бы понять с одного взгляда.
+
+    Проектируйте тесты так, чтобы отчёт сообщал бы о том, что тестируется, по какому сценарию, и о том, чего ждут от тестов:
+тестируемый модуль (Products Service) => сценарий (Add new product) => то, чего ждут от теста (When no price is specified, then the product status is pending approval)
+
+    * Пирамида тестирования с точки зрения Nodejs разработчика (node_testing_pyramid.jpeg):
+- Linting обеспечивает соблюдения код-стайла и отлавливает возможные ошибки синтаксиса. Используеться eslint.
+- Type checking проверяет типы или js doc c помощью TypeScript.
+- Unit tests не требуют запуска отдельного Node.js процесса. Тестируют отдельные функции или методы с помощью Jest.
+  Активно используют моки. Позволяет мерять уровень покрытия кода тестами. Использует подходы white box testing.
+- Integration tests требуют запуска Node.js процесса. Проверяют бизнесу логику c помощью Jest и различных библиотек
+  по работе с API/Bus/etc. Моки если и используются, то только на уровне 3rd-pary. Использует подходы gray box testing.
+- e2e требуют запуска не только Node.js процесса, но и клиентского кода. Т.е. запускает все приложения BE+FE. Имитирует
+  поведение пользователя, проверяя бизнесу логику всего приложения. Использует подходы black box testing. Зона отвественности QA-ев.
+
+    * Что надо знать о TDD и BDD:
+https://highload.today/blogs/chto-nado-znat-o-tdd-i-bdd-kak-testy-pomogayut-razrabotchikam-rabotat-v-komande-i-ponyat-zakazchika/
+https://medium.com/@andr.ivas12/%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B4%D0%BB%D1%8F-%D1%87%D0%B0%D0%B9%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2-c007d43da791
+
+    * stubs и mock
+Иногда эти термины stubs и mock путают: разница в том, что стаб ничего не проверяет, а лишь имитирует заданное состояние.
+А мок — это объект, у которого есть ожидания. Например, что данный метод класса должен быть вызван определенное число раз.
+Иными словами, ваш тест никогда не сломается из-за «стаба», а вот из-за мока может.
+
+
+https://meline.lviv.ua/development/nodejs/sinon-spies-stubs-mocks/
+    * Stubs – это функции с предварительно запрограммированным поведением. Они не вызывают существующую функцию,
+              а тестируют была ли она вызвана.
