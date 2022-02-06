@@ -7,14 +7,11 @@
 * tests: unit, integration, e2e, testing pyramid, code coverage (Mocha, Jest)
 * OAuth v2
 * http/https, REST, як працює мережа, DNS
-------------------------------------------------------------------------------------------------------------------------
+* node.js core: event loop, events, streams
 * OOP, SOLID, KISS, DRY, microservices architecture
 * patterns
-* javascript
 ------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------------------------------------------------
-* node.js core: events, streams, event loop
-* NestJS, Express
 * database: SQL (DDL, Injections), NO SQL (MongoDB)
 * typescript
+* NestJS, Express
+* javascript
