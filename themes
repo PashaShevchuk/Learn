@@ -6,13 +6,15 @@
 * git
 * tests: unit, integration, e2e, testing pyramid, code coverage (Mocha, Jest)
 * OAuth v2
-------------------------------------------------------------------------------------------------------------------------
 * http/https, REST, як працює мережа, DNS
+------------------------------------------------------------------------------------------------------------------------
 * OOP, SOLID, KISS, DRY, microservices architecture
 * patterns
 * javascript
 ------------------------------------------------------------------------------------------------------------------------
-* node.js core: events, streams, event loop, authentication
+
+------------------------------------------------------------------------------------------------------------------------
+* node.js core: events, streams, event loop
 * NestJS, Express
 * database: SQL (DDL, Injections), NO SQL (MongoDB)
 * typescript
