@@ -10,8 +10,7 @@
 * node.js core: event loop, events, streams
 * OOP, SOLID, KISS, DRY, microservices architecture
 * patterns
-------------------------------------------------------------------------------------------------------------------------
 * database: SQL (DDL, Injections), NO SQL (MongoDB)
-* typescript
 * NestJS, Express
 * javascript
+* typescript
